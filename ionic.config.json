@@ -1,0 +1,7 @@
+{
+  "name": "Biblio Search",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

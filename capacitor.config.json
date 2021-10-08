@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Biblio Search",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
