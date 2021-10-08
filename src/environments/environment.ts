@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyClpyJovhCKqflIhLYBZA87A5ILDZQ-Mbo',
-    authDomain: 'biblio-search.firebaseapp.com',
-    projectId: 'biblio-search',
-    storageBucket: 'biblio-search.appspot.com',
-    messagingSenderId: '173702811420',
-    appId: '1:173702811420:web:16c542db95bc9b6967b4d9',
-    measurementId: 'G-4YLLPHCPJ4'
+    apiKey: "AIzaSyClpyJovhCKqflIhLYBZA87A5ILDZQ-Mbo",
+    authDomain: "biblio-search.firebaseapp.com",
+    databaseURL: "https://biblio-search-default-rtdb.firebaseio.com",
+    projectId: "biblio-search",
+    storageBucket: "biblio-search.appspot.com",
+    messagingSenderId: "173702811420",
+    appId: "1:173702811420:web:16c542db95bc9b6967b4d9",
+    measurementId: "G-4YLLPHCPJ4"
   }
 };
 
