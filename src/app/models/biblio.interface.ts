@@ -1,4 +1,4 @@
-export interface Book {
+export interface Biblio {
   idreferencia?: number;
   titulopub: string;
   autores: string;

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item *ngIf="todo">
+      <ion-input required type="text" placeholder="*Título de la publicación." [(ngModel)]="todo.titulopub"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todo">
+      <ion-input required type="text" placeholder="*Lista de autores separada por comas." [(ngModel)]="todo.autores"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todo">
+      <ion-select required placeholder="*Tipo de publicación" [(ngModel)]="todo.tipopub">
+        <ion-select-option value="1">Revista</ion-select-option>
+        <ion-select-option value="2">Evento</ion-select-option>
+        <ion-select-option value="3">Otro</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="todo">
+      <ion-input type="text" placeholder="Nombre del evento o revista en la que se publica." [(ngModel)]="todo.eventorevista"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todo">
+      <ion-input type="text" placeholder="Código identificador único de documento." [(ngModel)]="todo.doi"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todo">
+      <ion-datetime required type="number" placeholder="*Año de la publicación." [(ngModel)]="todo.anyopub" displayFormat="YYYY"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveTodo()" [disabled]="!todo.titulopub || !todo.autores || !todo.tipopub || !todo.anyopub">Guardar</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+    <ion-fab-button color="danger" (click)="onRemoveTodo(todoId)" routerLink="/" routerDirection="forward">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

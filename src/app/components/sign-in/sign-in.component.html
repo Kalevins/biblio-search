@@ -1,47 +1,35 @@
-<div class="displayTable">
-  <div class="displayTableCell">
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Inicio de Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-    <div class="px-logo">
-      <a href="https://www.positronx.io" target="_blank">
-        <img src="https://www.positronx.io/wp-content/themes/positronx/img/logo-positronx-white.svg" alt="positronX.io - Learn Full Stack Development">
-      </a>
-    </div>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Correo electrónico</ion-label>
+    <ion-input class="formControl" type="email" #userName required></ion-input>
+  </ion-item>
 
-    <div class="authBlock">
-      <h3>Sign In</h3>
-      <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Username" #userName required>
-      </div>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" #userPassword required></ion-input>
+  </ion-item>
 
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPassword required>
-      </div>
+  <ion-button class="ion-margin-top" type="submit" expand="block" (click)="authService.signIn(userName.value, userPassword.value)">
+    Iniciar Sesión
+  </ion-button>
 
-      <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.signIn(userName.value, userPassword.value)">
-      </div>
-
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <!-- Calling GoogleAuth Api from AuthService -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Log in with Google
-        </button>
-      </div>
-
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
-      </div>
-    </div>
-
-    <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-    </div>
-
-  </div>
-</div>
+  <ion-item class="ion-text-center">
+    <ion-label>O</ion-label>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="dark" expand="block" fill="outline" [routerLink]="['/register-user']">Registrarse</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="dark" expand="block" fill="outline" [routerLink]="['/forgot-password']">¿Olvidaste tu contraseña?</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
