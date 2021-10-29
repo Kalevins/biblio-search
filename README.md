@@ -1,5 +1,5 @@
 # Biblio-Search
-_Proyecto que integra una aplicación CRUD con autenticación en firebase_
+_Proyecto que integra una aplicación CRUD con autenticación en firebase._
 
 ## 🔧 Instalación
 
